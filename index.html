@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Parallax</title>
+    <style>
+      body {
+        height: 2000px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      @media (max-width: 768px) {
+        body {
+          height: auto;
+        }
+      }
+      .parallax {
+        background-image: url("bg-svg.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        padding: 0 20px;
+      }
+      @media (max-width: 768px) {
+        .parallax {
+          font-size: 1.5em;
+          padding: 20px;
+        }
+      }
+      .scroll-up {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #333;
+        color: white;
+        font-size: 2em;
+        transition: background-color 0.5s;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 10px 20px;
+        position: relative;
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        .scroll-up {
+          font-size: 1.5em;
+          padding: 10px 10px;
+          height: auto;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .scroll-up h2 {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+        .scroll-up button {
+          display: block;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          padding: 10px 15px;
+          background-color: #333;
+          color: white;
+          border: none;
+          cursor: pointer;
+          z-index: 999;
+        }
+      }
+      .scroll-up:hover {
+        background-color: #555;
+      }
+      .footer {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #555;
+        color: white;
+        font-size: 2em;
+        transition: background-color 0.5s;
+        scroll-behavior: smooth;
+        position: relative;
+      }
+      @media (max-width: 768px) {
+        .footer {
+          font-size: 1.5em;
+          padding: 20px;
+          height: auto;
+        }
+        .footer button {
+          display: block;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          padding: 10px 15px;
+          background-color: #333;
+          color: white;
+          border: none;
+          cursor: pointer;
+          z-index: 999;
+        }
+      }
+      .footer:hover {
+        background-color: #777;
+        transform: translateY(-10px);
+      }
+      .footer ul {
+        margin-top: 12px;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.8em;
+        padding: 0;
+        list-style: none;
+      }
+      @media (max-width: 768px) {
+        .footer ul {
+          font-size: 0.6em;
+        }
+      }
+      .footer ul li {
+        margin-bottom: 5px;
+      }
+      .footer ul li button {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 1em;
+      }
+      .scroll-up button,
+      .footer button {
+        display: none;
+      }
+      @media (min-width: 769px) {
+        .scroll-up:hover button,
+        .footer:hover button {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parallax">Scroll Parallax</div>
+    <div class="scroll-up">
+      <h2>Apa Itu Efek Paralaks</h2>
+      <p>
+        Paralaks scrolling adalah teknik dalam grafis komputer dan desain web,
+        di mana gambar latar belakang bergerak oleh kamera lebih lambat daripada
+        gambar depan, menciptakan ilusi kedalaman dalam sebuah adegan 2D dan
+        menambahkan kedalaman.
+      </p>
+    </div>
+    <div class="footer">
+      Section Footer
+      <ul>
+        <li>
+          <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+            &#8593; Home
+          </button>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
